@@ -1,0 +1,14 @@
+classes:
+- Login
+- Student
+	String group
+- Teacher
+- Reports
+- Courses
+- Manager
+- Person
+	int id
+	String firstname
+	String lastname
+	DateFormat birthdate
+	int age
