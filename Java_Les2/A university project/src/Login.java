@@ -17,7 +17,7 @@ public class Login {
 
          for(Person person : personArrayList){
              if(person.userName.equals(userName) && person.passWord.equals(passWord)) {
-                 new Menu(person, personArrayList);
+                 displayMenu(person);
                  loggedIn = true;
              }
          }
@@ -26,5 +26,18 @@ public class Login {
     private String askQuestion(String question){
         System.out.print(question);
         return scanner.nextLine();
+    }
+    private void displayMenu(Person person){
+        switch(person.access) {
+            case Basic:
+                new DisplayBasic(personArrayList).displayMenu();
+                break;
+            case Editor:
+                new DisplayEditor(personArrayList).displayMenu();
+                break;
+            case Admin:
+                new DisplayAdmin(personArrayList).displayMenu();
+                break;
+        }
     }
 }
